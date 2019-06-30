@@ -1,0 +1,844 @@
+@gray:#efefef;
+@grey:#c5c8ce;
+@primary-color:#8DCD8D;
+@xs:6px;
+@sm:12px;
+@default:18px;
+@lg:24px;
+@xl:32px;
+
+.padding-container {
+  box-sizing: border-box;
+  padding: 12px;
+  background-color: #fff;
+}
+
+.between-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.gap-line{
+  height: 1px;
+  width: 100%;
+  background-color: @gray;
+  margin: 12px 0;
+}
+
+.gap-block{
+  height: 80px;
+  width: 100%;
+  background-color: #eee;
+}
+
+.title {
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.btn{
+  border-radius: 3px;
+  &:extend(.bg-primary);
+  width: 250px;
+  height: 42px;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  line-height: 42px;
+  font-size: 16px;
+}
+
+.navi-back{
+  position: absolute;
+  left: 16px;
+  top: 18px;
+  z-index: 999;
+}
+
+.radius{
+  border-radius: 5px;
+}
+
+
+/*  -- flex弹性布局 -- */
+
+.flex {
+  display: flex;
+}
+
+.basis-xs {
+  flex-basis: 20%;
+}
+
+.basis-sm {
+  flex-basis: 40%;
+}
+
+.basis-df {
+  flex-basis: 50%;
+}
+
+.basis-lg {
+  flex-basis: 60%;
+}
+
+.basis-xl {
+  flex-basis: 80%;
+}
+
+.flex-sub {
+  flex: 1;
+}
+
+.flex-twice {
+  flex: 2;
+}
+
+.flex-treble {
+  flex: 3;
+}
+
+.flex-direction {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.hidden{
+  display: none;
+}
+
+/*  -- 内外边距 -- */
+
+.margin-0 {
+  margin: 0;
+}
+
+.margin-xs {
+  margin: @xs;
+}
+
+.margin-sm {
+  margin: @sm;
+}
+
+.margin {
+  margin: @xl;
+}
+
+.margin-lg {
+  margin: @lg;
+}
+
+.margin-xl {
+  margin: @xl;
+}
+
+.margin-top-xs {
+  margin-top: @xs;
+}
+
+.margin-top-sm {
+  margin-top: @sm;
+}
+
+.margin-top {
+  margin-top: @default;
+}
+
+.margin-top-lg {
+  margin-top: @lg;
+}
+
+.margin-top-xl {
+  margin-top: @xl;
+}
+
+.margin-right-xs {
+  margin-right: @xs;
+}
+
+.margin-right-sm {
+  margin-right: @sm;
+}
+
+.margin-right {
+  margin-right: @default;
+}
+
+.margin-right-lg {
+  margin-right: @lg;
+}
+
+.margin-right-xl {
+  margin-right: @xl;
+}
+
+.margin-bottom-xs {
+  margin-bottom: @xs;
+}
+
+.margin-bottom-sm {
+  margin-bottom: @sm;
+}
+
+.margin-bottom {
+  margin-bottom: @default;
+}
+
+.margin-bottom-lg {
+  margin-bottom: @lg;
+}
+
+.margin-bottom-xl {
+  margin-bottom: @xl;
+}
+
+.margin-left-xs {
+  margin-left: @xs;
+}
+
+.margin-left-sm {
+  margin-left: @sm;
+}
+
+.margin-left {
+  margin-left: @default;
+}
+
+.margin-left-lg {
+  margin-left: @lg;
+}
+
+.margin-left-xl {
+  margin-left: @xl;
+}
+
+.margin-lr-xs {
+  margin-left: @xs;
+  margin-right: @xs;
+}
+
+.margin-lr-sm {
+  margin-left: @sm;
+  margin-right: @sm;
+}
+
+.margin-lr {
+  margin-left: @default;
+  margin-right: @default;
+}
+
+.margin-lr-lg {
+  margin-left: @lg;
+  margin-right: @lg;
+}
+
+.margin-lr-xl {
+  margin-left: @xl;
+  margin-right: @xl;
+}
+
+.margin-tb-xs {
+  margin-top: @xs;
+  margin-bottom: @xs;
+}
+
+.margin-tb-sm {
+  margin-top: @sm;
+  margin-bottom: @sm;
+}
+
+.margin-tb {
+  margin-top: @default;
+  margin-bottom: @default;
+}
+
+.margin-tb-lg {
+  margin-top: @lg;
+  margin-bottom: @lg;
+}
+
+.margin-tb-xl {
+  margin-top: @xl;
+  margin-bottom: @xl;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-xs {
+  padding: @xs;
+}
+
+.padding-sm {
+  padding: @sm;
+}
+
+.padding {
+  padding: @default;
+}
+
+.padding-lg {
+  padding: @lg;
+}
+
+.padding-xl {
+  padding: @xl;
+}
+
+.padding-top-xs {
+  padding-top: @xs;
+}
+
+.padding-top-sm {
+  padding-top: @sm;
+}
+
+.padding-top {
+  padding-top: @default;
+}
+
+.padding-top-lg {
+  padding-top: @lg;
+}
+
+.padding-top-xl {
+  padding-top: @xl;
+}
+
+.padding-right-xs {
+  padding-right: @xs;
+}
+
+.padding-right-sm {
+  padding-right: @sm;
+}
+
+.padding-right {
+  padding-right: @default;
+}
+
+.padding-right-lg {
+  padding-right: @lg;
+}
+
+.padding-right-xl {
+  padding-right: @xl;
+}
+
+.padding-bottom-xs {
+  padding-bottom: @xs;
+}
+
+.padding-bottom-sm {
+  padding-bottom: @sm;
+}
+
+.padding-bottom {
+  padding-bottom: @default;
+}
+
+.padding-bottom-lg {
+  padding-bottom: @lg;
+}
+
+.padding-bottom-xl {
+  padding-bottom: @xl;
+}
+
+.padding-left-xs {
+  padding-left: @xs;
+}
+
+.padding-left-sm {
+  padding-left: @sm;
+}
+
+.padding-left {
+  padding-left: @default;
+}
+
+.padding-left-lg {
+  padding-left: @lg;
+}
+
+.padding-left-xl {
+  padding-left: @xl;
+}
+
+.padding-lr-xs {
+  padding-left: @xs;
+  padding-right: @xs;
+}
+
+.padding-lr-sm {
+  padding-left: @sm;
+  padding-right: @sm;
+}
+
+.padding-lr {
+  padding-left: @default;
+  padding-right: @default;
+}
+
+.padding-lr-lg {
+  padding-left: @lg;
+  padding-right: @lg;
+}
+
+.padding-lr-xl {
+  padding-left: @xl;
+  padding-right: @xl;
+}
+
+.padding-tb-xs {
+  padding-top: @xs;
+  padding-bottom: @xs;
+}
+
+.padding-tb-sm {
+  padding-top: @sm;
+  padding-bottom: @sm;
+}
+
+.padding-tb {
+  padding-top: @default;
+  padding-bottom: @default;
+}
+
+.padding-tb-lg {
+  padding-top: @lg;
+  padding-bottom: @lg;
+}
+
+.padding-tb-xl {
+  padding-top: @xl;
+  padding-bottom: @xl;
+}
+
+/* ==================
+         表单
+ ==================== */
+
+.cu-form-group {
+  background: #fff;
+  padding: 1px 16px;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  justify-content: space-between;
+}
+
+.cu-form-group+.cu-form-group {
+  border-top: 1px solid #eee;
+}
+
+.cu-form-group .title {
+  text-align: justify;
+  padding-right: 16px;
+  font-size: 16px;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+}
+
+.cu-form-group.top {
+  align-items: baseline;
+}
+
+.cu-form-group input {
+  flex: 1;
+  font-size: 16px;
+  color: #555;
+  padding-right: 12px;
+}
+
+.cu-form-group>text[class*="icon"] {
+  font-size: 18px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cu-form-group textarea, .cu-form-group textarea textarea {
+  margin: 16px 0 15px;
+  height: 4.8em;
+  width: 100%;
+  line-height: 1.2em;
+  flex: 1;
+  font-size: 14px;
+  padding: 0;
+  box-sizing: content-box;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.cu-form-group textarea::after {
+  content: "测试文字";
+  opacity: 0;
+}
+
+.cu-form-group .grid-square {
+  margin: 12px 0 0;
+}
+
+.cu-form-group picker {
+  flex: 1;
+  padding-right: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cu-form-group picker .picker {
+  line-height: 50px;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-align: right;
+}
+
+.cu-form-group picker::after {
+  font-family: iconfont;
+  display: block;
+  content: "\e6a3";
+  position: absolute;
+  font-size: 18px;
+  color: #aaa;
+  line-height: 50px;
+  width: 30px;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: -10px;
+  margin: auto;
+}
+
+.cu-form-group textarea[disabled],
+.cu-form-group textarea[disabled] .placeholder {
+  color: transparent;
+}
+
+/* ==================
+          列表
+ ==================== */
+
+.cu-list.menu {
+  display: block;
+  overflow: hidden;
+}
+
+.cu-list+.cu-list {
+  margin-top: 30px;
+}
+
+.cu-list.menu>.cu-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  background: #fff;
+  padding: 0 30px;
+}
+
+.cu-list.menu>.cu-item::after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+}
+
+.cu-list.menu.sm-border>.cu-item::after {
+  width: calc(200% - 120px);
+  left: 30px;
+}
+
+.cu-list.menu>.cu-item:last-child::after {
+  border: none;
+}
+
+.cu-list.menu>.cu-item.cur {
+  background-color: #fcf7e9;
+}
+
+.cu-list.menu-avatar>.cu-item {
+  padding-left: 140px;
+}
+
+.cu-list.menu-avatar>.cu-item .cu-avatar {
+  left: 30px;
+}
+
+.cu-list.menu>.cu-item .content {
+  line-height: 1.6em;
+  flex: 1;
+  font-size: 30px;
+}
+
+.cu-list.menu>.cu-item button.content {
+  padding: 0;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.cu-list.menu>.cu-item button.content::after {
+  display: none;
+}
+
+.cu-list.menu>.cu-item .content>text[class*="icon"] {
+  margin-right: 10px;
+  display: inline-block;
+  width: 1.6em;
+  text-align: center;
+}
+
+.cu-list.menu>.cu-item .content>image {
+  margin-right: 10px;
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  vertical-align: middle;
+}
+
+.cu-list.menu-avatar>.cu-item .action {
+  text-align: center;
+}
+
+.cu-list.menu-avatar>.cu-item .action view + view {
+  margin-top: 10px;
+}
+
+.cu-list.menu>.cu-item .action .cu-tag:empty {
+  right: 10px;
+}
+
+.cu-list.menu>.cu-item.arrow {
+  padding-right: 90px;
+}
+
+.cu-list.menu>.cu-item.arrow::before {
+  font-family: "iconfont";
+  display: block;
+  content: "\e6a3";
+  position: absolute;
+  font-size: 34px;
+  color: #aaa;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  top: 0px;
+  bottom: 0;
+  right: 30px;
+  margin: auto;
+}
+
+.cu-list.menu>.cu-item .cu-avatar-group .cu-avatar {
+  border-color: #fff;
+}
+
+.cu-list.card-menu {
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cu-list.menu-avatar>.cu-item {
+  padding-left: 140px;
+  height: 140px;
+}
+
+.cu-list.menu-avatar>.cu-item>.cu-avatar {
+  position: absolute;
+  left: 30px;
+}
+
+.cu-list.menu-avatar.comment>.cu-item {
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 120px;
+}
+
+.cu-list.menu-avatar.comment .cu-avatar {
+  align-self: flex-start;
+}
+
+.cu-list.menu>.cu-item .content .cu-tag.sm {
+  font-size: 16px;
+  line-height: 80%;
+  padding: 8px 6px 4px;
+  margin-top: -6px;
+}
+
+.cu-list.grid {
+  text-align: center;
+  background: #fff;
+}
+
+.cu-list.grid>.cu-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 30px;
+  position: relative;
+  transition-duration: 0s;
+}
+
+.cu-list.grid>.cu-item [class*="icon"] {
+  display: block;
+  width: 100%;
+  position: relative;
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+.cu-list.grid>.cu-item text {
+  display: block;
+  color: #888;
+  margin-top: 10px;
+  line-height: 40px;
+  font-size: 26px;
+}
+
+.cu-list.grid>.cu-item .cu-tag {
+  left: 50%;
+  right: auto;
+  margin-left: 20px;
+}
+
+.cu-list.grid>.cu-item::after {
+  content: " ";
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cu-list.grid.col-3>.cu-item:nth-child(3n)::after {
+  border-right-width: 0px;
+}
+
+.cu-list.grid.col-4>.cu-item:nth-child(4n)::after {
+  border-right-width: 0px;
+}
+
+.cu-list.grid.col-5>.cu-item:nth-child(5n)::after {
+  border-right-width: 0px;
+}
+
+.cu-list.grid.no-border {
+  padding: 20px 10px;
+}
+
+.cu-list.grid.no-border>.cu-item {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.cu-list.grid.no-border>.cu-item::after {
+  border: none;
+}
+
+.cu-list>.cu-item {
+  transform: translateX(0px);
+  transition: all 0.6s ease-in-out 0s;
+}
+
+.cu-list>.cu-item .move {
+  display: flex;
+  width: 260px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+}
+
+.cu-list>.cu-item.move-cur {
+  transform: translateX(-260px);
+}
+
+.cu-list>.cu-item .move div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
