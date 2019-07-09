@@ -14,13 +14,18 @@
             const code = this.$route.query.code;
             const rules = [{
                match:!this.$handle.isTokenExpire(),
-               action:()=> this.$router.replace({name:'search'})
+               action:()=> {
+                   this.$router.replace({name:'search'})
+               }
             },{
                match:code,
                action:()=>{
                    this.$handle.request('userAutoToken',res=>{
                        this.$handle.setToken(res.access_token);
-                       this.$router.replace({name:'search'});
+                       //this.$router.replace({name:'search'});
+                       setTimeout(() => {
+                           window.location.href = process.env.REDIRECT_URL + '/';
+                       }, 0);
                    },{wx_code:code});
                }
             },{

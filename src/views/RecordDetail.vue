@@ -51,13 +51,13 @@
             </div>
             <div class="padding-container">
                 <div class="flex align-center justify-between">
-                    <p>航空常去城市</p>
+                    <p>近12个月航空常去城市</p>
                     <p v-if="info.passenger_value_report">{{info.passenger_value_report}}</p>
                     <p v-else>未查到相关数据</p>
                 </div>
                 <div class="flex align-center justify-between">
-                    <p>近三个月乘高铁次数</p>
-                    <p v-if="info.railway_userInfo_v2">{{info.railway_userInfo_v2}}</p>
+                    <p>近3个月乘高铁次数</p>
+                    <p v-if="info.railway_userInfo_v2">{{info.railway_userInfo_v2==='[5-∞)' ? '5+' : info.railway_userInfo_v2}}</p>
                     <p v-else>未查到相关数据</p>
                 </div>
             </div>
@@ -68,12 +68,12 @@
                     <p v-if="info.bad_infoe">疑似{{info.bad_infoe}}</p>
                     <p v-else>未查到相关数据</p>
                 </div>
-                <div class="flex align-center justify-between" v-for="(item,index) in enforced_person" :key="index">
+                <div class="flex align-center justify-between" v-for="(item,index) in info.enforced_person" :key="index">
                     <p>{{item.caseCode}}</p>
                     <p>被执行人</p>
                 </div>
-                <div class="flex align-center justify-between" v-for="(item,index) in enforced_disruptor" :key="index">
-                    <p>{{item.gistId}}</p>
+                <div class="flex align-center justify-between" v-for="(item,index) in info.enforced_disruptor" :key="index">
+                    <p>{{item.caseCode}}</p>
                     <p>失信被执行人</p>
                 </div>
             </div>
@@ -96,12 +96,12 @@
                 </div>
                 <div class="flex align-center justify-between">
                     <p>博彩类网站</p>
-                    <p v-if="info.risk_assessment_beesmell_v2.net_var2 >= 0">{{info.risk_assessment_beesmell_v2.net_var2}}笔</p>
+                    <p v-if="info.risk_assessment_beesmell_v2.net_var2 >= 0">{{6 - info.risk_assessment_beesmell_v2.net_var2 > 0 ? 6 - info.risk_assessment_beesmell_v2.net_var2 : 0}}笔</p>
                     <p v-else>未查到相关数据</p>
                 </div>
                 <div class="flex align-center justify-between">
                     <p>近3个月网贷申请</p>
-                    <p v-if="info.radar.toString()">{{info.radar}}笔</p>
+                    <p v-if="info.radar >=0 ">{{info.radar}}笔</p>
                     <p v-else>未查到相关数据</p>
                 </div>
             </div>

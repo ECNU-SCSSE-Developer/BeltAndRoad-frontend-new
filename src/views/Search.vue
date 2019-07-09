@@ -1,18 +1,20 @@
 <template>
     <div v-if="!loading">
-        <Indication v-if="show_indication" @click.native="show_indication = false" />
+        <Indication v-if="show_indication" @click.native="show_indication = false"/>
         <van-swipe :autoplay="3000" indicator-color="white">
             <van-swipe-item class="banner" v-for="(item,index) in res" :key="index">
                 <img :src="item.img_url" alt="">
             </van-swipe-item>
         </van-swipe>
         <div class="flex align-center" style="width: 100%;box-shadow:0px 6px 21px 0px rgba(0,0,0,0.06);">
-            <div class="padding-container flex flex-direction align-center justify-center" style="flex: 1" @click="$router.push({name:'protocol',query:{type:3}})">
-                <van-icon name="question-o"  color="#8DCD8D" size="40px"  />
+            <div class="padding-container flex flex-direction align-center justify-center" style="flex: 1"
+                 @click="$router.push({name:'protocol',query:{type:3}})">
+                <van-icon name="question-o" color="#8DCD8D" size="40px"/>
                 <p class="margin-top-sm">使用教程</p>
             </div>
-            <div class="padding-container flex flex-direction align-center justify-center" style="flex: 1" @click="$router.push({name:'protocol',query:{type:4}})">
-                <van-icon name="completed"  color="#8DCD8D" size="40px"  />
+            <div class="padding-container flex flex-direction align-center justify-center" style="flex: 1"
+                 @click="$router.push({name:'protocol',query:{type:4}})">
+                <van-icon name="completed" color="#8DCD8D" size="40px"/>
                 <p class="margin-top-sm">报告样例</p>
             </div>
         </div>
@@ -24,17 +26,20 @@
                     replace
                     to="/"
                     icon="search"
-            >查询</van-tabbar-item>
+            >查询
+            </van-tabbar-item>
             <van-tabbar-item
                     replace
                     to="/record"
                     icon="notes-o"
-            >档案</van-tabbar-item>
+            >档案
+            </van-tabbar-item>
             <van-tabbar-item
                     replace
                     to="/account"
                     icon="contact"
-            >账号</van-tabbar-item>
+            >账号
+            </van-tabbar-item>
         </van-tabbar>
     </div>
 </template>
@@ -42,53 +47,58 @@
 <script>
     import wx from '@/utils/wx';
     import Indication from '@/components/Indication'
+    import storage from '@/utils/storage'
+
     export default {
-        components:{
-          Indication
+        components: {
+            Indication
         },
         data() {
             return {
-                res:{},
-                loading:false,
-                show_indication:false,
+                res: {},
+                loading: false,
+                show_indication: false,
             }
         },
         methods: {
-            check(){
+            check() {
                 const rules = [{
-                    match:!this.$store.state.userinfo.phone,
-                    action:()=>{
-                        this.$handle.request('getUser',res=>{
-                            if(!res.phone) return this.$router.replace({name:'login'});
-                            this.$store.commit('setUserInfo',res);
+                    match: !this.$store.state.userinfo.phone,
+                    action: () => {
+                        this.$handle.request('getUser', res => {
+                            if (!res.phone) return this.$router.replace({name: 'login'});
+                            this.$store.commit('setUserInfo', res);
                             this.genOrder();
-                        },{},false);
+                        }, {}, false);
                     }
-                },{
-                    match:true,
-                    action:()=>{
+                }, {
+                    match: true,
+                    action: () => {
                         this.genOrder();
                     }
                 }];
-                this.$handle.apply(rules,this);
+                for (let i = 0; i < rules.length; ++i) {
+                    if (rules[i].match) rules[i].action();
+                }
             },
-            genOrder(){
+            genOrder() {
                 this.$dialog.confirm({
                     message: '该操作会新生成一张申请表，生成后需要您手动选择好友进行分享，且每张申请表仅能填写一次，是否确认生成?',
-                }).then(()=>{
-                    this.$handle.request('genOrder',res=>{
-                        wx.share(res,()=>{
+                }).then(() => {
+                    this.$handle.request('genOrder', res => {
+                        wx.share(res, () => {
                             this.$dialog.alert({
-                                message:'分享信息设置成功，请点击右上角点状按钮选择好友进行分享'
-                            }).then(()=>this.show_indication = true);
+                                message: '分享信息设置成功，请点击右上角点状按钮选择好友进行分享'
+                            }).then(() => this.show_indication = true);
                         });
                     })
-                }).catch(()=>{});
+                }).catch(() => {
+                });
             }
         },
-        created(){
+        created() {
             this.loading = true;
-            this.$handle.request('getIndexData',res=>{
+            this.$handle.request('getIndexData', res => {
                 this.loading = false;
                 this.res = res;
             })
@@ -97,15 +107,17 @@
 </script>
 
 <style lang="less" scoped>
-    .banner{
+    .banner {
         width: 100%;
         height: 480px;
     }
-    .banner img{
+
+    .banner img {
         width: 100%;
         height: 100%;
     }
-    p{
+
+    p {
         color: #333;
         font-size: 0.88em;
     }

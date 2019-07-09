@@ -1,7 +1,6 @@
 import wx from 'wx-js-sdk-1.4.0'
 import handle from './handle'
 import store from '../store'
-import util from './util'
 import { Dialog } from 'vant';
 function init(callback){
     const url = process.env.REDIRECT_URL + '/';

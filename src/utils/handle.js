@@ -50,6 +50,7 @@ function request(method,callback,post_data={},showLoading = true) {
             if(res.code == 2000) callback && callback(res.data);
             else if(res.code == 5001){
                 Toast('登录状态失效，请重新登录');
+                storage.reSetToken();
                 router.replace({name:'index'});
             }
             else Toast(res.msg);
@@ -67,7 +68,6 @@ function setToken(token) {
 
 function apply(rules) {
     for(let i = 0;i<rules.length;++i){
-        console.log(rules[i]);
         if(rules[i].match) return rules[i].action();
     }
 }
