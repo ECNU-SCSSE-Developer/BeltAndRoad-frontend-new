@@ -66,7 +66,7 @@
                     match: !this.$store.state.userinfo.phone,
                     action: () => {
                         this.$handle.request('getUser', res => {
-                            if (!res.phone) return this.$router.replace({name: 'login'});
+                            if (!res.phone) return this.$router.push({name: 'login'});
                             this.$store.commit('setUserInfo', res);
                             this.genOrder();
                         }, {}, false);
@@ -78,7 +78,7 @@
                     }
                 }];
                 for (let i = 0; i < rules.length; ++i) {
-                    if (rules[i].match) rules[i].action();
+                    if (rules[i].match) return rules[i].action();
                 }
             },
             genOrder() {

@@ -25,6 +25,7 @@
                        //this.$router.replace({name:'search'});
                        setTimeout(() => {
                            window.location.href = process.env.REDIRECT_URL + '/';
+                           window.event.returnValue = false;
                        }, 0);
                    },{wx_code:code});
                }
