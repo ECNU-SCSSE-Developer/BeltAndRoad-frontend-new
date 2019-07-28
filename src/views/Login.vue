@@ -90,9 +90,10 @@
                     this.$handle.request('userLogin',()=>{
                         this.$handle.showSuc('绑定成功');
                         this.$store.commit('setUserInfo',post_data);
-                        setTimeout(()=>{
-                            this.$router.replace({name:'search'});
-                        },800)
+                        setTimeout(() => {
+                            window.location.href = process.env.REDIRECT_URL + '/';
+                            window.event.returnValue = false;
+                        }, 800);
                     },post_data)
                 }
             },

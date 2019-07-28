@@ -15,7 +15,10 @@
             const rules = [{
                match:!this.$handle.isTokenExpire(),
                action:()=> {
-                   this.$router.replace({name:'search'})
+                   setTimeout(() => {
+                       window.location.href = process.env.REDIRECT_URL + '/';
+                       window.event.returnValue = false;
+                   }, 0);
                }
             },{
                match:code,

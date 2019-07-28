@@ -62,24 +62,33 @@
         },
         methods: {
             check() {
-                const rules = [{
-                    match: !this.$store.state.userinfo.phone,
-                    action: () => {
-                        this.$handle.request('getUser', res => {
-                            if (!res.phone) return this.$router.push({name: 'login'});
-                            this.$store.commit('setUserInfo', res);
-                            this.genOrder();
-                        }, {}, false);
-                    }
-                }, {
-                    match: true,
-                    action: () => {
+                // const rules = [{
+                //     match: !this.$store.state.userinfo.phone,
+                //     action: () => {
+                //         this.$handle.request('getUser', res => {
+                //             if (!res.phone) return this.$router.push({name: 'login'});
+                //             else{
+                //                 this.$store.commit('setUserInfo', res);
+                //                 this.genOrder();
+                //             }
+                //         }, {}, false);
+                //     }
+                // }, {
+                //     match: true,
+                //     action: () => {
+                //         this.genOrder();
+                //     }
+                // }];
+                // for (let i = 0; i < rules.length; ++i) {
+                //     if (rules[i].match) return rules[i].action();
+                // }
+                this.$handle.request('getUser', res => {
+                    if (!res.phone) return this.$router.push({name: 'login'});
+                    else {
+                        this.$store.commit('setUserInfo', res);
                         this.genOrder();
                     }
-                }];
-                for (let i = 0; i < rules.length; ++i) {
-                    if (rules[i].match) return rules[i].action();
-                }
+                }, {}, false);
             },
             genOrder() {
                 this.$dialog.confirm({

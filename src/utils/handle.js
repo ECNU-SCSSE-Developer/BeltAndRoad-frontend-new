@@ -3,6 +3,7 @@ import axios from 'axios';
 import router from '../router'
 import storage from  './storage'
 import { Toast } from 'vant';
+import { Dialog } from 'vant';
 
 const http = axios.create({
     baseURL: process.env.API_BASE_URL,
@@ -37,7 +38,8 @@ function postReq(requestHandler,showLoading) {
         }).catch((err)=>{
             console.log(err);
             if(loadTost) loadTost.clear();
-            Toast.fail('无法连接到网络');
+            //Toast.fail('无法连接到网络');
+            Dialog({ message: JSON.stringify(err) });
     });
 }
 
