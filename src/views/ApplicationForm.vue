@@ -5,8 +5,8 @@
             <van-field label="姓名：" center v-model="order.borrow_name"/>
             <van-field label="身份证号：" center v-model="order.card_no"/>
             <van-field label="手机号码：" center maxlength="11" v-model="order.phone"/>
-            <van-field label="借款金额：" @blur="getAmount" center v-model="order.borrow_amount" type="number"/>
-            <van-cell title="借款期限：" is-link center :value="getPeriod" @click="show_select_period = true"/>
+<!--        <van-field label="借款金额：" @blur="getAmount" center v-model="order.borrow_amount" type="number"/>-->
+            <van-cell title="期限：" is-link center :value="getPeriod" @click="show_select_period = true"/>
             <van-field label="验证码：" center v-model="order.phone_code" maxlength="6">
                 <VerifyCode slot="button" :phone="order.phone" @getVerifyCode="getVerifyCode"></VerifyCode>
             </van-field>
@@ -84,10 +84,12 @@
                 }, {
                     match: !uitl.verifyIdCode(this.order.card_no),
                     action: () => this.$handle.showErr('请填写正确的身份证号')
-                }, {
-                    match: !this.order.borrow_amount,
-                    action: () => this.$handle.showErr('请填写借款金额')
-                }, {
+                },
+                //   {
+                //     match: !this.order.borrow_amount,
+                //     action: () => this.$handle.showErr('请填写借款金额')
+                // },
+                  {
                     match: this.year < 1 && this.month < 1 && this.day < 1,
                     action: () => this.$handle.showErr('请填写借款周期')
                 }, {
