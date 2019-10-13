@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import {humpToHyphen} from "./utils/util";
 
+
 Vue.use(Router);
 
 let routes = [{
