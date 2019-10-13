@@ -1,18 +1,657 @@
 <template>
+  <div class="class">
     <div>
-
+      <el-tabs tab-position="left" style="height: 100%;" v-model="activeName">
+        <el-tab-pane label="国家列表" name="first">
+          <el-input
+            v-model="search"
+            size="mini"
+            style="width : 120px; float:right"
+            placeholder="输入关键字搜索"
+          />
+          <el-table
+            :show-header="false"
+            :data="tableData.filter(data => !search || data.title.includes(search))"
+            style="width: 100%;"
+            @row-click="handleClick"
+          >
+            <el-table-column prop="title" style="width: 100%; " align="center"></el-table-column>
+          </el-table>
+        </el-tab-pane>
+        <el-tab-pane label="国家概况" name="second">
+          <div class="title">{{currentCountryData.title}}</div>
+          <hr />
+          <p style="text-indent:32px;line-height:40px">{{currentCountryData.paragraph}}</p>
+          <el-button type="text" style="float:right" @click="toShow">
+            国家数据展示
+            <i class="el-icon-right"></i>
+          </el-button>
+        </el-tab-pane>
+        <el-tab-pane label="数据展示" name="third">
+          <div>
+            <el-select v-model="choice" placeholder="请选择" @change="onChange">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+            <el-select v-model="country" placeholder="请选择" @change="changeCountry">
+              <el-option
+                v-for="(item, index) in tableData"
+                :key="item.title"
+                :label="item.title"
+                :value="index"
+              ></el-option>
+            </el-select>
+          </div>
+          <div id="echartContainer"></div>
+        </el-tab-pane>
+      </el-tabs>
     </div>
+  </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {}
+import echarts from "echarts";
+export default {
+  data() {
+    return {
+      search: "",
+      activeName: "first",
+      country: 0,
+      options: [
+        {
+          value: 0,
+          label: "经济增长率"
+        },
+        {
+          value: 1,
+          label: "GDP构成"
+        },
+        {
+          value: 2,
+          label: "财政收入"
+        },
+        {
+          value: 3,
+          label: "公共债务"
+        },
+        {
+          value: 4,
+          label: "土地及房屋价格"
+        }
+      ],
+      chart: null,
+      choice: 0,
+      tag: [
+        ["2013", "2014", "2015", "2016", "2017"],
+        [],
+        ["2013", "2014", "2015", "2016", "2017"],
+        ["2012", "2013", "2014", "2015"]
+      ],
+
+      tableData: [
+        {
+          title: "马里",
+          paragraph:
+            "在你准备赴马里共和国（The Republic of Mali，以下简称“马里”）投资合作之前，你是否对马里的投资合作环境有足够的了解？那里的政治、经济和社会文化环境如何？有哪些行业适合开展投资合作？在马里进行投资合作的商务成本是否具有竞争力？应该怎样办理相关审核手续？当地规范外国投资合作的法律法规有哪些？在马里开展投资合作应特别注意哪些问题？一旦遇到困难该怎么办？如何与当地政府、议会、工会、居民、媒体以及执法部门打交道？《对外投资合作国别（地区）指南》系列丛书之《马里》将会给你提供基本的信息，成为你了解马里的向导。",
+          data: [
+            [
+              [128.13, 140.04, 127.47, 140.45, 140.64],
+              [777.6, 825.6, 729.7, 780.5, 781.3],
+              [2.3, 7, 6, 5.3, 5.4] ///"国内生产总值GDP(美元)", "人均GDP(美元)", "经济增长率"///
+            ],
+            [
+              { value: 38.3, name: "农业" },
+              { value: 16.6, name: "工业" },
+              { value: 63.7, name: "服务业" }
+            ],
+            [
+              [11372, 12151, 14811, 1562.4, 18170],
+              [12924, 14199, 16223, 1910.6, 20839],
+              [3412, 3623, 3488, 524.3, 5431] //"收入(亿非洲法郎)", "支出(亿非洲法郎)", "赤字(亿非洲法郎)"
+            ],
+            [
+              [20.5, 22.03, 22.63, 26.68],
+              [2.9, 3.8, 6.79, 9.47],
+              [29.5, 31.4, 27.6, 36.3]
+            ]
+          ]
+        },
+        { title: "尼日利亚", paragraph: "", data: [] },
+        { title: "利比里亚", paragraph: "", data: [] },
+        { title: "秘鲁", paragraph: "", data: [] },
+        { title: "也门", paragraph: "", data: [] }
+      ],
+      currentCountryData: {
+        title: "马里",
+        paragraph:
+          "在你准备赴马里共和国（The Republic of Mali，以下简称“马里”）投资合作之前，你是否对马里的投资合作环境有足够的了解？那里的政治、经济和社会文化环境如何？有哪些行业适合开展投资合作？在马里进行投资合作的商务成本是否具有竞争力？应该怎样办理相关审核手续？当地规范外国投资合作的法律法规有哪些？在马里开展投资合作应特别注意哪些问题？一旦遇到困难该怎么办？如何与当地政府、议会、工会、居民、媒体以及执法部门打交道？《对外投资合作国别（地区）指南》系列丛书之《马里》将会给你提供基本的信息，成为你了解马里的向导。",
+        data: [
+          [
+            [128.13, 140.04, 127.47, 140.45, 140.64],
+            [777.6, 825.6, 729.7, 780.5, 781.3],
+            [2.3, 7, 6, 5.3, 5.4] ///"国内生产总值GDP(美元)", "人均GDP(美元)", "经济增长率"///
+          ],
+          [
+            { value: 38.3, name: "农业" },
+            { value: 16.6, name: "工业" },
+            { value: 63.7, name: "服务业" }
+          ],
+          [
+            [11372, 12151, 14811, 1562.4, 18170],
+            [12924, 14199, 16223, 1910.6, 20839],
+            [3412, 3623, 3488, 524.3, 5431] //"收入(亿非洲法郎)", "支出(亿非洲法郎)", "赤字(亿非洲法郎)"
+          ],
+          [
+            [20.5, 22.03, 22.63, 26.68],
+            [2.9, 3.8, 6.79, 9.47],
+            [29.5, 31.4, 27.6, 36.3]
+          ]
+        ]
+      }
+    };
+  },
+
+  methods: {
+    handleClick(row) {
+      this.country = row.title;
+      this.currentCountryData = this.tableData.filter(data => {
+        return data.title.includes(this.country);
+      })[0];
+      this.activeName = "second";
     },
-    methods: {}
+    toShow() {
+      this.activeName = "third";
+      this.createChart();
+    },
+    onChange() {
+      this.$forceUpdate();
+      this.createChart();
+    },
+    createChart() {
+      switch (this.choice) {
+        case 0:
+          this.chart.clear();
+          this.chart.setOption({
+            color: ["#5793f3", "#d14a61", "#675bba"],
+            tooltip: {
+              trigger: "axis",
+              axisPointer: {
+                type: "cross"
+              }
+            },
+            legend: {
+              data: ["国内生产总值GDP", "人均GDP", "经济增长率"]
+            },
+            grid: {
+              right: 160
+            },
+            xAxis: {
+              data: this.tag[this.choice]
+            },
+            yAxis: [
+              {
+                type: "value",
+                name: "国内生产总值GDP",
+                position: "right",
+                splitLine: {
+                  show: false
+                },
+                min:
+                  parseInt(
+                    Math.min.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][0]
+                    )
+                  ) - 1,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][0]
+                    )
+                  ) + 1,
+                axisLine: {
+                  lineStyle: {
+                    color: "#5793f3"
+                  }
+                },
+                axisLabel: {
+                  formatter: "{value} 美元"
+                }
+              },
+              {
+                type: "value",
+                name: "人均GDP",
+                position: "right",
+                offset: 80,
+                splitLine: {
+                  show: false
+                },
+                min:
+                  parseInt(
+                    Math.min.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][1]
+                    )
+                  ) - 1,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][1]
+                    )
+                  ) + 1,
+                axisLine: {
+                  lineStyle: {
+                    color: "#d14a61"
+                  }
+                },
+                axisLabel: {
+                  formatter: "{value} 美元"
+                }
+              },
+              {
+                type: "value",
+                name: "经济增长率",
+                position: "left",
+                splitLine: {
+                  show: false
+                },
+                axisLine: {
+                  lineStyle: {
+                    color: "#675bba"
+                  }
+                },
+                min:
+                  parseInt(
+                    Math.min.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][2]
+                    )
+                  ) - 1,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][2]
+                    )
+                  ) + 1,
+                axisLabel: {
+                  formatter: "{value} %"
+                }
+              }
+            ],
+            series: [
+              {
+                name: "国内生产总值GDP",
+                type: "bar",
+                data: this.currentCountryData.data[this.choice][0]
+              },
+              {
+                name: "人均GDP",
+                type: "bar",
+                yAxisIndex: 1,
+                data: this.currentCountryData.data[this.choice][1]
+              },
+              {
+                name: "经济增长率",
+                type: "line",
+                yAxisIndex: 2,
+                data: this.currentCountryData.data[this.choice][2]
+              }
+            ]
+          });
+          break;
+        case 2:
+          this.chart.clear();
+          this.chart.setOption({
+            color: ["#5793f3", "#d14a61", "#675bba"],
+            tooltip: {
+              trigger: "axis",
+              axisPointer: {
+                type: "cross"
+              }
+            },
+            legend: {
+              data: ["收入(亿非洲法郎)", "支出(亿非洲法郎)", "赤字(亿非洲法郎)"]
+            },
+            grid: {
+              right: 160
+            },
+            xAxis: {
+              data: this.tag[this.choice]
+            },
+            yAxis: [
+              {
+                type: "value",
+                name: "收入",
+                position: "right",
+                splitLine: {
+                  show: false
+                },
+                min:
+                  parseInt(
+                    Math.min.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][0]
+                    )
+                  ) - 1000,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][0]
+                    )
+                  ) + 1000,
+                axisLine: {
+                  lineStyle: {
+                    color: "#5793f3"
+                  }
+                },
+                axisLabel: {
+                  formatter: "{value} "
+                }
+              },
+              {
+                type: "value",
+                name: "支出",
+                position: "right",
+                offset: 80,
+                splitLine: {
+                  show: false
+                },
+                min:
+                  parseInt(
+                    Math.min.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][1]
+                    )
+                  ) - 1000,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][1]
+                    )
+                  ) + 1000,
+                axisLine: {
+                  lineStyle: {
+                    color: "#d14a61"
+                  }
+                },
+                axisLabel: {
+                  formatter: "{value} "
+                }
+              },
+              {
+                type: "value",
+                name: "赤字",
+                position: "left",
+                splitLine: {
+                  show: false
+                },
+                axisLine: {
+                  lineStyle: {
+                    color: "#675bba"
+                  }
+                },
+                min: 0,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][2]
+                    )
+                  ) + 1000,
+                axisLabel: {
+                  formatter: "{value} "
+                }
+              }
+            ],
+            series: [
+              {
+                name: "收入",
+                type: "bar",
+                data: this.currentCountryData.data[this.choice][0]
+              },
+              {
+                name: "支出",
+                type: "bar",
+                yAxisIndex: 1,
+                data: this.currentCountryData.data[this.choice][1]
+              },
+              {
+                name: "赤字",
+                type: "bar",
+                yAxisIndex: 2,
+                data: this.currentCountryData.data[this.choice][2]
+              }
+            ]
+          });
+          break;
+        case 3:
+          this.chart.clear();
+          this.chart.setOption({
+            color: ["#5793f3", "#d14a61", "#675bba"],
+            tooltip: {
+              trigger: "axis",
+              axisPointer: {
+                type: "cross"
+              }
+            },
+            legend: {
+              data: ["外债(亿欧元)", "内债(亿欧元)", "占GDP比重"]
+            },
+            grid: {
+              right: 160
+            },
+            xAxis: {
+              data: this.tag[this.choice]
+            },
+            yAxis: [
+              {
+                type: "value",
+                name: "外债(亿欧元)",
+                position: "right",
+                splitLine: {
+                  show: false
+                },
+                min:
+                  parseInt(
+                    Math.min.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][0]
+                    )
+                  ) - 1,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][0]
+                    )
+                  ) + 1,
+                axisLine: {
+                  lineStyle: {
+                    color: "#5793f3"
+                  }
+                },
+                axisLabel: {
+                  formatter: "{value} "
+                }
+              },
+              {
+                type: "value",
+                name: "内债(亿欧元)",
+                position: "right",
+                offset: 80,
+                splitLine: {
+                  show: false
+                },
+                min:
+                  parseInt(
+                    Math.min.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][1]
+                    )
+                  ) - 1,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][1]
+                    )
+                  ) + 1,
+                axisLine: {
+                  lineStyle: {
+                    color: "#d14a61"
+                  }
+                },
+                axisLabel: {
+                  formatter: "{value} "
+                }
+              },
+              {
+                type: "value",
+                name: "占GDP比重",
+                position: "left",
+                splitLine: {
+                  show: false
+                },
+                axisLine: {
+                  lineStyle: {
+                    color: "#675bba"
+                  }
+                },
+                min:
+                  parseInt(
+                    Math.min.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][2]
+                    )
+                  ) - 1,
+                max:
+                  Math.ceil(
+                    Math.max.apply(
+                      null,
+                      this.currentCountryData.data[this.choice][2]
+                    )
+                  ) + 1,
+                axisLabel: {
+                  formatter: "{value} %"
+                }
+              }
+            ],
+            series: [
+              {
+                name: "外债(亿欧元)",
+                type: "bar",
+                data: this.currentCountryData.data[this.choice][0]
+              },
+              {
+                name: "内债(亿欧元)",
+                type: "bar",
+                yAxisIndex: 1,
+                data: this.currentCountryData.data[this.choice][1]
+              },
+              {
+                name: "占GDP比重",
+                type: "line",
+                yAxisIndex: 2,
+                data: this.currentCountryData.data[this.choice][2]
+              }
+            ]
+          });
+          break;
+        case 1:
+          this.chart.clear();
+          this.chart.setOption({
+            tooltip: {
+              trigger: "item",
+              formatter: "{a} <br/>{b}:{c} %"
+            },
+            legend: {
+              data: ["农业", "工业", "服务业"]
+            },
+            series: [
+              {
+                name: "占比",
+                type: "pie",
+                radius: "55%",
+                center: ["50%", "50%"],
+                data: this.currentCountryData.data[this.choice],
+                itemStyle: {
+                  emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: "rgba(0, 0, 0, 0.5)"
+                  }
+                }
+              }
+            ]
+          });
+          break;
+      }
+    },
+    changeCountry(){
+      this.currentCountryData = this.tableData[this.country]
+    }
+  },
+  mounted() {
+    var ch = document.getElementById("echartContainer");
+    ch.style.width =
+      (window.innerWidth * 0.8 - 111 > 800 - 111
+        ? window.innerWidth * 0.8 - 111
+        : 800 - 111) + "px";
+    ch.style.height =
+      (ch.style.width > window.innerHeight
+        ? window.innerHeight
+        : ch.style.width) + "px";
+    var myChart = echarts.init(document.getElementById("echartContainer"));
+    this.chart = myChart;
+    window.addEventListener("resize", function() {
+      let ch = document.getElementById("echartContainer");
+      ch.style.width =
+        (window.innerWidth * 0.8 - 111 > 800 - 111
+          ? window.innerWidth * 0.8 - 111
+          : 800 - 111) + "px";
+      ch.style.height =
+        (ch.style.width > window.innerHeight
+          ? window.innerHeight
+          : ch.style.width) + "px";
+      myChart.resize();
+    });
   }
+};
 </script>
 
 <style lang="less" scoped>
-
+.class {
+  height: 100%;
+  width: 80%;
+  min-width: 800px;
+  margin: 0 auto;
+  background-color: #fdfcf8;
+  overflow: hidden;
+}
+.title {
+  font-family: "Helvetica";
+  text-align: center;
+  letter-spacing: 10px;
+  margin: 30px 0px;
+  color: #333;
+  font-size: 40px;
+}
+.el-tabs--left .el-tabs__header.is-left {
+  float: left;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+#echartContainer {
+  height: 500px;
+  width: 100%;
+}
 </style>
