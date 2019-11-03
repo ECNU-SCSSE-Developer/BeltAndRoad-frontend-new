@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import PolicyArticle from './components/PolicyArticle.vue'
 import {humpToHyphen} from "./utils/util";
 
 
@@ -9,7 +10,13 @@ let routes = [{
   path: '/',
   name: 'Catalog',
   component: () => import('./views/Catalog.vue')
-}];
+},
+{
+  path:'/policyarticle',
+  name:'PolicyArticle',
+  component: PolicyArticle
+}
+];
 
 const keepAliveSet = new Set([]);
 

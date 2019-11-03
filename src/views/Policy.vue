@@ -14,12 +14,13 @@
       <!--end of left-->
       
       <div class="mid-right">
+         <hr>
       <div v-if="kk==1" >
         <ArticleList :listId="1" ></ArticleList>
       </div >
 
       <div v-if="kk==2">
-        2222222
+       <ImageList></ImageList>
       </div>
       <div v-if="kk==3">
       <ArticleList :listId="2" ></ArticleList>
@@ -35,9 +36,14 @@
 
     </div>
    <!--end of main body-->
-    <div class="foot"></div>
+    <div >
+      <Footer>hhh</Footer>
+    </div>
    
     </div>
+
+    <Return></Return>
+    
  </div>
 </template>
 
@@ -46,7 +52,11 @@
 import VerticalNav from '../components/PolicyVerticalNavigation.vue'
 import ArticleList from '../components/PolicyList.vue'
 import WordCloud from "../components/PolicyWordCloud.vue"
+import ImageList from "../components/ImageList.vue"
+import Return from "../components/ReturnPage.vue"
+import Footer from "../components/Foot.vue"
 import Msg from '../components/msg.js'
+
 
 
 
@@ -68,9 +78,14 @@ import Msg from '../components/msg.js'
     components:{
     VerticalNav,
     ArticleList,
-    WordCloud
+    WordCloud,
+    ImageList,
+    Return,
+    Footer
+    
     }
 
+    
   }
 </script>
 
@@ -82,11 +97,19 @@ import Msg from '../components/msg.js'
    
  }
 
+  hr{
+    *margin: 0;
+    border: 1px;
+    color: whitesmoke;
+    background-color: rgb(244,216,236); 
+    height: 1px
+}
+
 .all{
    
  background-image: url(../assets/70周年6.jpg);
  width:100%;
- height:1100px;
+ height:1380px;
  z-index:-10;
  background-repeat: no-repeat;
  background-size:cover;
@@ -133,4 +156,6 @@ import Msg from '../components/msg.js'
        background-color: #fff;
        height: 630px;
    }
+
+  
 </style>
