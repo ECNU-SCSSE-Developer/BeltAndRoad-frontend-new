@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
 
 .card{
    /* height:220px; */
@@ -59,9 +59,7 @@ export default {
          width:200px;
          /* margin:30px 30px 0px 30px; */
     }
-.el-card >>> p{
-  height:30px;
-}
+
 
 
 </style>

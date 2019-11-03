@@ -1,15 +1,16 @@
 <template>
     <div>
-
+      <div id= "echartContainer"></div>
     </div>
 </template>
 
 <script>
+
   export default {
     data() {
       return {}
     },
-    methods: {}
+    methods: {},
   }
 </script>
 

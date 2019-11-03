@@ -17,7 +17,7 @@ require('echarts-wordcloud');
 Vue.prototype.$store = store;
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
-
+Vue.use(echarts);
 
 new Vue({
   router,
