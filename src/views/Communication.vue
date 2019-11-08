@@ -13,6 +13,9 @@
           style="height: 630px;   background-color: white;"
           v-model="activeName"
         >
+          <el-tab-pane label="数据概览" name="forth">
+            <div id="echartContainer1"></div>
+          </el-tab-pane>
           <el-tab-pane label="国家列表" name="first">
             <el-input
               v-model="search"
@@ -22,13 +25,19 @@
             />
             <el-table
               :show-header="false"
-              :data=date
+              :data="date"
               style="width: 100%;"
               @row-click="handleClick"
             >
               <el-table-column prop="title" style="width: 100%; " align="center"></el-table-column>
             </el-table>
-            <el-pagination align="center" style="margin:10px" layout="prev, pager, next" :total="122"  @current-change="handleSizeChange"></el-pagination>
+            <el-pagination
+              align="center"
+              style="margin:10px"
+              layout="prev, pager, next"
+              :total="122"
+              @current-change="handleSizeChange"
+            ></el-pagination>
           </el-tab-pane>
           <el-tab-pane label="国家概况" name="second">
             <div class="title">{{currentCountryData.title}}</div>
@@ -61,19 +70,28 @@
             <div id="echartContainer"></div>
           </el-tab-pane>
         </el-tabs>
+        <div class="foot1">
+          <div style="position: absolute; margin-top:-1%;">
+            <img src="@/assets/policy_brush1.png" />
+          </div>
+          <p class="p1">@2018-2019 seven-guys有限公司 版权所有</p>
+        </div>
       </div>
     </div>
+
+    <Return></Return>
   </div>
 </template>
 
 <script>
+import Return from "../components/ReturnPage.vue";
 import echarts from "echarts";
+
 export default {
   data() {
     return {
-      
       search: "",
-      activeName: "first",
+      activeName: "forth",
       country: 0,
       options: [
         {
@@ -91,10 +109,6 @@ export default {
         {
           value: 3,
           label: "公共债务"
-        },
-        {
-          value: 4,
-          label: "土地及房屋价格"
         }
       ],
       start: 0,
@@ -171,7 +185,6 @@ export default {
         { title: "格林纳达", paragraph: "", data: [] },
         { title: "乍得", paragraph: "", data: [] },
         { title: "乌干达", paragraph: "", data: [] },
-
         { title: "坦桑尼亚", paragraph: "", data: [] },
         { title: "纳米比亚", paragraph: "", data: [] },
         { title: "肯尼亚", paragraph: "", data: [] },
@@ -297,9 +310,9 @@ export default {
       })[0];
       this.activeName = "second";
     },
-    handleSizeChange(val){
-      this.start = 10*val-10;
-      this.end = 10*val > 122?122:10*val;
+    handleSizeChange(val) {
+      this.start = 10 * val - 10;
+      this.end = 10 * val > 122 ? 122 : 10 * val;
       this.$forceUpdate();
     },
     toShow() {
@@ -752,6 +765,62 @@ export default {
     var myChart = echarts.init(document.getElementById("echartContainer"));
     this.chart = myChart;
     this.createChart();
+    var myChart1 = echarts.init(document.getElementById("echartContainer1"));
+    myChart1.setOption({
+      title: {
+          text:"部分国家2017年经济增长率表",
+          left:'center',
+          textStyle:{
+            fontSize:30
+          }
+      },
+      color: ["#3398DB","#333333"],
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          // 坐标轴指示器，坐标轴触发有效
+          type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+        }
+      },
+      grid: {
+        left: "3%",
+        right: "4%",
+        bottom: "3%",
+        containLabel: true
+      },
+      xAxis: [
+        {
+          type: "category",
+          data: ["贝宁", "马里", "科摩罗", "莱索托", "尼日利亚", "利比里亚", "秘鲁","塞浦路斯","也门" , "赤道几内亚","牙买加" ,"卢森堡" ,"泰国","意大利","古巴","巴巴多斯","菲律宾","印度尼西亚","文莱","巴林","奥地利","阿联酋","瓦努阿图","汤加","塞内加尔","厄瓜多尔","葡萄牙","斐济","马耳他","多米尼加","智利","萨摩亚","苏里南"],
+          axisTick: {
+            alignWithLabel: true,
+            interval: 0
+          },
+          axisLabel:{
+            interval:0,
+            rotate: -60
+          }
+        }
+      ],
+      yAxis: [
+        {
+          type: "value"
+        }
+      ],
+      series: [
+        {
+          name: "经济增长率",
+          type: "bar",
+          barWidth: "60%",
+          data: [5.6, 5.4, 2.7, 1.7, 0.83, 2.5, 2.53,3.9,-13.8,-5.3,0.5,4.0,3.9,1.5,1.6,1,6.8,5.07,1.3,3.9,2.9,0.8,4.5,2.7,7.2,3.0,2.7,4.2,6.6,4.6,1.5,2.57,-1.2]
+        },
+        {
+          name: "经济增长率",
+          type: "line",
+          data: [5.6, 5.4, 2.7, 1.7, 0.83, 2.5, 2.53,3.9,-13.8,-5.3,0.5,4.0,3.9,1.5,1.6,1,6.8,5.07,1.3,3.9,2.9,0.8,4.5,2.7,7.2,3.0,2.7,4.2,6.6,4.6,1.5,2.57,-1.2]
+        }
+      ]
+    });
     // window.addEventListener("resize", function() {
     //   let ch = document.getElementById("echartContainer");
     //   ch.style.width =
@@ -765,11 +834,15 @@ export default {
     //   myChart.resize();
     // });
   },
-  computed:{
-    date: function()
-    {
-      return this.tableData.filter(data => !this.search || data.title.includes(this.search)).slice(this.start,this.end)
-    },
+  components: {
+    Return
+  },
+  computed: {
+    date: function() {
+      return this.tableData
+        .filter(data => !this.search || data.title.includes(this.search))
+        .slice(this.start, this.end);
+    }
   }
 };
 </script>
@@ -778,7 +851,7 @@ export default {
 .class {
   background-image: url(../assets/70周年6.jpg);
   width: 100%;
-  height: 1100px;
+  height: 1300px;
   z-index: -10;
   background-repeat: no-repeat;
   background-size: cover;
@@ -786,11 +859,18 @@ export default {
   -o-background-size: cover;
   background-position: center 0;
 }
+.p1 {
+  position: absolute;
+  top: 50%;
+  left: 33%;
+  color: white;
+}
 .main {
   width: 1000px;
   height: 630px;
   padding-top: 4%;
   margin: 0px auto;
+  position: relative;
 }
 .title {
   font-family: "Helvetica";
@@ -809,12 +889,28 @@ export default {
   height: 500px;
   width: 800px;
 }
+#echartContainer1 {
+  height: 500px;
+  width: 800px;
+}
 .top img {
   height: 360px;
   width: 1000px;
   border-radius: 10px 10px 5px 5px;
 }
+.foot1 {
+  position: relative;
 
+  height: 250px;
+  width: 1000px;
+  background-color: rgb(177, 0, 0);
+  border-radius: 10px 10px 5px 5px;
+  margin-top: -1%;
+}
+.foot1 img {
+  height: 200px;
+  width: 1000px;
+}
 /deep/.el-tabs__item {
   color: rgb(177, 0, 0);
   font-size: 16px;
