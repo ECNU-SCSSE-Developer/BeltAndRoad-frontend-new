@@ -1,137 +1,177 @@
 <template>
-    <div id ="wordcloud" style="width:100%; height:655px;"></div>
-   
+  <div id="wordcloud" style="width:100%; height:655px;"></div>
 </template>
 
 <script>
-import { readlink } from 'fs';
-
+import { readlink } from "fs";
 
 export default {
+  mounted() {
+    this.getEchartsData1();
+  },
 
-
-mounted(){
-   this.getEchartsData1()
-},
-
-  methods:{
-      getEchartsData1() {
-        const myChart =this.$echarts.init(document.getElementById('wordcloud'))
-        const option = {
-           series:[{
-             type:'wordCloud',
-             shape:'ellipse',
-            //  maskImage:maskImage,
-
-             left:'center',
-             top:'center',
-             width:'80%',
-             height:'80%',
-             right:'center',
-             bottom:'center',
-             sizeRange:[12,60],//数的大小范围
-             
-             rotationRange:[-90,90],//随机旋转的范围
-             rotationStep:23.5,//旋转步长
-
-             gridSize:15,//与词的间距有关
-             drawOutOfBound:false,
-
-             /**Global text style**/
-             textStyle:{
-               normal:{
-                 fontFamily:'sans-serif',
-                 fontWeight:'bold',
-                 color:function(){ //随机生成颜色
-                   return 'rgb('+[
-                     Math.round((0.9+Math.random()) * 100),
-                     Math.round(0 * 100),
-                     Math.round(0* 100)
-                   ].join(',')+')';
-                 }
-               },
-
-               emphasis:{
-                 shadowBlur:2,
-                 shadowColor:'#F9E67C'
-               }
-             },
-
-          data:[{
-            name:'国际陆海贸易新通道',
-            value: 110,
-          },
-          {
-            name:'冰上丝绸之路',
-            value: 115,
-          },
-          {
-            name:'蓝色经济通道',
-            value: 140,
-          },
-          {
-            name:'中阿合作论坛',
-            value:200,
-          },
-          {
-            name:'中欧班列',
-            value: 125,
-          },
-          {
-            name:'六大经济走廊',
-            value: 300,
-          },
-          {
-            name:'上海合作组织',
-            value: 100,
-          },
-          {
-            name:'丝路精神',
-            value:350,
-          },
-          {
-            name:'区域经济合作',
-            value: 277,
-          },
-          {
-            name:'命运共同体',
-            value: 225,
-          },
-          {
-            name:'信息丝绸之路',
-            value: 165,
-          },
-          {
-            name:'国际产能合作',
-            value:99,
-          },
-          {
-            name:'自贸区',
-            value: 150,
-          },
-          {
-            name:'框架思路',
-            value: 125,
-          },
-          {
-            name:'丝路基金',
-            value: 150,
-          },
-          {
-            name:'亚投行',
-            value:235,
-          }
-          ]
-
-           }]
+  methods: {
+    getEchartsData1() {
+      const myChart = this.$echarts.init(document.getElementById("wordcloud"));
+      const option = {
+        tooltip: {
+          position:'top',
+          show: true,
+          formatter: function(params, ticket, callback) {
+            switch (params.data.name) {
+              case "国际陆海贸易新通道":
+                return "国际陆海贸易新通道原名中新互联互通南向通道，是在“一带一路”框架<br/>下，以广西、云南、贵州、四川、重庆、甘肃、青海、新疆、陕西等中国<br/>西部相关省区市为关键节点，利用铁路、海运、公路等运输方式，向南通<br/>达新加坡等东盟主要国家，并进而辐射澳新、中东及欧洲等区域，向东连<br/>接东北亚、北美等区域，向北与重庆、兰州、新疆等地的中欧班列连接，<br/>是西部地区实现与东盟及其他国家区域联动和国际合作、有机衔接“一带<br/>一路”的复合型对外开放通道。";
+              case "冰上丝绸之路":
+                return "冰上丝绸之路是指穿越北极圈，连接北美、东亚和西欧三大经济中心的海运航道。";
+              case "蓝色经济通道":
+                return "以中国沿海经济带为支撑，连接中国－中南半岛经济走廊，经南海向西进<br/>入印度洋，衔接中巴、孟中印缅经济走廊，共同建设中国－印度洋－非洲<br/>－地中海蓝色经济通道；经南海向南进入太平洋，共建中国－大洋洲－南<br/>太平洋蓝色经济通道；积极推动共建经北冰洋连接欧洲的蓝色经济通道。";
+              case "中阿合作论坛":
+                return "中国国家主席胡锦涛访问了设在埃及开罗的阿拉伯国家联盟（下称“阿盟”<br/>）总部，会见了阿盟秘书长阿姆鲁·马哈茂德·穆萨（Amr Mahmoud Mous<br/>sa）和22个阿盟成员国代表。会见结束后，李肇星外长与穆萨秘书长共同<br/>宣布成立“中国—阿拉伯国家合作论坛”，并发表了《关于成立“中国—阿拉伯<br/>国家合作论坛”的公报》。";
+              case "中欧班列":
+                return "中欧班列（英文名称CHINA RAILWAY Express，缩写CR Express）是由<br/>中国铁路总公司组织，按照固定车次、线路、班期和全程运行时刻开行，<br/>运行于中国与欧洲以及“一带一路”沿线国家间的集装箱等铁路国际联运列<br/>车，是深化我国与沿线国家经贸合作的重要载体和推进“一带一路”建设的重<br/>要抓手。";
+              case "六大经济走廊":
+                return "“六廊六路多国多港”是共建“一带一路”的主体框架，为各国参与 “一带一<br/>路”合作提供了清晰的导向。";
+              case "自贸区":
+                return "一种是广义的自贸区（FREE TRADE AREA），指两个或两个以上国家或地<br/>区通过签署自贸协定，在WTO最惠国待遇基础上，相互进一步开放市场，<br/>分阶段取消绝大部分货物的关税和非关税壁垒，改善服务业市场准入条件<br/>，实现贸易和投资的自由化，从而形成促进商品、服务和资本、技术、人员<br/>等生产要素自由流动的“大区”。中国近年来积极推动建立的东盟、中日<br/>韩自贸区，即是广义自贸区。另一种是狭义的自贸区（FREE TRA<br/>DE ZONE），“指一国的部分领土，在这部分领土内运入的任何货<br/>物就进口关税及其他各税而言，被认为在关境以外，并免于实施惯常的海<br/>关监管制度。”这是国际上对“自由贸易区”最权威的定义，来自197<br/>3年的《京都公约》(全称《关于简化和协调海关业务制度的国际公约》<br/>)：“自由区”一词，也是第一个正式涉及自由贸易区的国际规范。“自<br/>由区”目前是国际通用提法，其核心是强调“境内关外”的自由贸易，直<br/>至今天国际上关于自由贸易区的种种理解和称谓，都是指符合该公约界定<br/>的经济区。上海自贸区属狭义自由贸易园区。";
+              case "丝路精神":
+                return "丝路精神即丝绸之路精神的简称。丝绸之路不仅是商业通道，更重要的是<br/>丝绸之路体现的“丝路精神”。丝绸之路作为人文社会的交往平台，多民族<br/>、多种族、多宗教、多文化在此交汇融合，在长期交往过程中各个国家之<br/>间形成了“团结互信、平等互利、包容互鉴、合作共赢，不同种族、不同信<br/>仰、不同文化背景的国家可以共享和平，共同发展”的丝路精神。";
+              case "区域经济合作":
+                return "区域性经济合作是指某一个区域内两个或两个以上的国家，为了维护共同<br/>的经济和政治利益，实现专业化分工和进行产品交换而采取共同的经济政<br/>策，实行某种形式的经济联合或组成区域性经济团体。";
+              case "命运共同体":
+                return "这个世界，各国相互联系、相互依存的程度空前加深，人类生活在同一个<br/>地球村里，生活在历史和现实交汇的同一个时空里，越来越成为你中有我<br/>、我中有你的命运共同体。";
+              case "信息丝绸之路":
+                return "信息丝绸之路，指的是开辟以通信和互联网产业为抓手的新型国际贸易之<br/>路。在建设“一带一路”的过程中，沿路各国从信息交流上互联互通，而互<br/>联互通重在网络先行，同时应积极推动媒体共享共赢，在资源互换、人员<br/>交流、业务培训上加强互动，建立起多元、长效的交流合作机制，开拓媒<br/>体间互联互通的合作新局面。";
+              case "国际产能合作":
+                return "产能合作是指产业和能力的输出，不是简单地把产品卖到国外，而是把产<br/>业整体输出到不同的国家去，帮助这些国家建立更加完整的工业体系、制<br/>造能力。";
+              case "上海合作组织":
+                return "上海合作组织，简称上合组织（英语：Shanghai Cooperation Organi<br/>zation，简称SCO；俄语：Шанхайская организация сотрудничества<br/>，简称ШОС），是哈萨克斯坦共和国、中华人民共和国、吉尔吉斯共和国<br/>、俄罗斯联邦、塔吉克斯坦共和国、乌兹别克斯坦共和国于2001年6月15日<br/>在中国上海宣布成立的永久性政府间国际组织。上海合作组织是迄今唯<br/>一在中国境内成立、以中国城市命名、总部设在中国境内的区域性<br/>国际组织。";
+              case "丝路基金":
+                return "丝路基金由外汇储备、中国投资有限责任公司、国家开发银行、中国进出<br/>口银行共同出资，于2014年12月29日在北京注册成立。";
+              case "亚投行":
+                return "亚投行全称亚洲基础设施投资银行（Asian Infrastructure Investme<br/>nt Bank，AIIB），是政府间性质的亚洲区域多边开发机构，也是全球首<br/>个由中国倡议设立的多边金融机构。亚投行重点支持基础设施建设，成立<br/>宗旨在促进亚洲区域的建设互联互通化和经济一体化的进程，并且加强中国<br/>及其他亚洲国家和地区的合作。2015年12月25日正式成立，总部设在<br/>北京。";
             }
+          }
+        },
+        series: [
+          {
+            type: "wordCloud",
+            shape: "ellipse",
+            //  maskImage:maskImage,
+            left: "center",
+            top: "center",
+            width: "80%",
+            height: "80%",
+            right: "center",
+            bottom: "center",
+            sizeRange: [12, 60], //数的大小范围
 
-  myChart.setOption(option)
-  window.addEventListener('resize',function(){ //自适应
-    myChart.resize()
-  })
-      }
+            rotationRange: [-90, 90], //随机旋转的范围
+            rotationStep: 23.5, //旋转步长
+
+            gridSize: 15, //与词的间距有关
+            drawOutOfBound: false,
+
+            /**Global text style**/
+            textStyle: {
+              normal: {
+                fontFamily: "sans-serif",
+                fontWeight: "bold",
+                color: function() {
+                  //随机生成颜色
+                  return (
+                    "rgb(" +
+                    [
+                      Math.round((0.9 + Math.random()) * 100),
+                      Math.round(0 * 100),
+                      Math.round(0 * 100)
+                    ].join(",") +
+                    ")"
+                  );
+                }
+              },
+
+              emphasis: {
+                shadowBlur: 2,
+                shadowColor: "#F9E67C"
+              }
+            },
+
+            data: [
+              {
+                name: "国际陆海贸易新通道",
+                value: 110
+              },
+              {
+                name: "冰上丝绸之路",
+                value: 115
+              },
+              {
+                name: "蓝色经济通道",
+                value: 140
+              },
+              {
+                name: "中阿合作论坛",
+                value: 200
+              },
+              {
+                name: "中欧班列",
+                value: 125
+              },
+              {
+                name: "六大经济走廊",
+                value: 300
+              },
+              {
+                name: "上海合作组织",
+                value: 100
+              },
+              {
+                name: "丝路精神",
+                value: 350
+              },
+              {
+                name: "区域经济合作",
+                value: 277
+              },
+              {
+                name: "命运共同体",
+                value: 225
+              },
+              {
+                name: "信息丝绸之路",
+                value: 165
+              },
+              {
+                name: "国际产能合作",
+                value: 99
+              },
+              {
+                name: "自贸区",
+                value: 150
+              },
+              {
+                name: "框架思路",
+                value: 125
+              },
+              {
+                name: "丝路基金",
+                value: 150
+              },
+              {
+                name: "亚投行",
+                value: 235
+              }
+            ]
+          }
+        ]
+      };
+
+      myChart.setOption(option);
+      window.addEventListener("resize", function() {
+        //自适应
+        myChart.resize();
+      });
+    }
   }
-}
-
+};
 </script>
