@@ -17,10 +17,7 @@
         <i class="el-icon-view"></i>
         <span slot="title">丝路百科</span>
       </el-menu-item>
-       <el-menu-item index="5" @click="menu5">
-        <i class="el-icon-video-camera"></i>
-        <span slot="title">"习"与丝路</span>
-      </el-menu-item>
+       
     </el-menu>
 
     </div>

@@ -33,6 +33,10 @@
 <style lang="less" scoped>
     .container {
         &:extend(.flex);
+        background-image: url(../assets/policy_bg1.png);
+        background-size: cover;
+        height: 100%;
+        width: 100%;
     }
 
     .row {

@@ -28,9 +28,7 @@
       <div v-if="kk==4">
        <WordCloud></WordCloud>
       </div>
-    <div v-if="kk==5">
-      quick
-       </div>
+   
       </div>
       <!--end of right-->
 
