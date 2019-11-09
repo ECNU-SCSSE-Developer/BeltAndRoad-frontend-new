@@ -44,7 +44,6 @@ export default {
       Msg.$emit("val","5")
     }
   }
-
 }
 </script>
 

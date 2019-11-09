@@ -1,7 +1,7 @@
 <template>
 <div>
   <ul  class="piclist"> 
-    <li v-for="pic in piclist" > 
+    <li v-for="pic in piclist" v-bind:key="pic"> 
       <div class="card">
   <el-card :body-style="{ padding: '0px' }" class="catalog" shadow="always">
   <div   class="demo-image__preview">
