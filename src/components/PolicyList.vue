@@ -1,7 +1,7 @@
 <template>
     <div class="list" name="show">
       <el-collapse accordion>
-          <el-collapse-item  v-for ="article in articlelist " :title="article.title">
+          <el-collapse-item  v-for ="article in articlelist " :title="article.title" :key="article">
              <div><div style="text-indent:2em; width:90%; margin:0px auto;">{{article.abstract}}</div></div>
               <!-- <div class=transform><el-link type="info" :underline="false" @click='goto()'>>>了解更多</el-link></div> -->
               <div class=transform><router-link  style="color:rgb(38,100,185);text-decoration:none;" :to="{name:'PolicyArticle', params:{img:article.img,detail:article.detail,title:article.title}} " >>>了解更多</router-link></div>
