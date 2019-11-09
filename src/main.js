@@ -4,11 +4,11 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import dataV from '@jiaminghi/data-view'
 import echarts from 'echarts'
 // import 'echarts-wordcloud/dist/echarts-wordcloud.js'
 // import 'echarts-wordcloud/dist/echarts-wordcloud.min.js'
 import axios from 'axios'
+import dataV from '@jiaminghi/data-view'
 Vue.prototype.$http=axios
 Vue.prototype.$echarts=echarts
 //var echarts =require('echarts');
@@ -18,6 +18,7 @@ Vue.prototype.$store = store;
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.use(echarts);
+Vue.use(dataV);
 
 new Vue({
   router,

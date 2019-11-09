@@ -1,6 +1,6 @@
 <template>
     <div>
-hhh
+      <dv-loading>Loading...</dv-loading>
     </div>
 </template>
 
