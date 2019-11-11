@@ -29,6 +29,12 @@ export default {
   data() {
     return {
       option: {
+        title:{
+              text:'部分国家17年经济增长率一览',
+              style:{
+                fill:'#999'
+              }
+            },
         legend: {
           data: ["经济增长率"],
           textStyle: {
