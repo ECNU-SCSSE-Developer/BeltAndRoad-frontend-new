@@ -1,107 +1,162 @@
 <template>
   <div class="top-middle-cmp">
     <div>
-        <el-button type="text" size="medium" @click.native="onCatalog(2)">设备完好率月趋势</el-button>
-        <dv-decoration-3 style="width:200px;height:20px;" />
+      <el-button type="text" size="medium" @click.native="onCatalog(2)">点击查看更多国家信息</el-button>
+      <dv-decoration-3 style="width:200px;height:20px;" />
     </div>
     <!-- <div class="chart-name">
       设备完好率月趋势
       <dv-decoration-3 style="width:200px;height:20px;" />
-    </div> -->
+    </div>-->
     <dv-charts :option="option" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TopMiddleCmp',
+  name: "TopMiddleCmp",
   methods: {
     onCatalog(index) {
-        const catalogs = ['policy', 'infrastructure', 'communication', 'education'];
-        this.$router.push({name: catalogs[index]});
-      }
+      const catalogs = [
+        "policy",
+        "infrastructure",
+        "communication",
+        "education"
+      ];
+      this.$router.push({ name: catalogs[index] });
+    }
   },
-  data () {
+  data() {
     return {
       option: {
         legend: {
-          data: ['设备完好率'],
+          data: ["经济增长率"],
           textStyle: {
-            fill: '#fff'
+            fill: "#fff"
           }
         },
         xAxis: {
+          type: "category",
           data: [
-            '10/01', '10/02', '10/03', '10/04', '10/05', '10/06',
-            '10/07', '10/07', '10/08', '10/09', '10/10', '10/11',
-            '10/12', '10/13', '10/14', '10/15'
+            "贝宁",
+            "马里",
+            "科摩罗",
+            "莱索托",
+            "尼日利亚",
+            "利比里亚",
+            "秘鲁",
+            "塞浦路斯",
+            "也门",
+            "赤道几内亚",
+            "牙买加",
+            "卢森堡",
+            "泰国",
+            "意大利",
+            "古巴",
+            "巴巴多斯",
+            "菲律宾",
+            "印度尼西亚",
+            "文莱",
+            "巴林",
+            "奥地利",
+            "阿联酋",
+            "瓦努阿图",
+            "汤加",
+            "塞内加尔",
+            "厄瓜多尔",
+            "葡萄牙",
+            "斐济",
+            "马耳他",
+            "多米尼加",
+            "智利",
+            "萨摩亚",
+            "苏里南"
           ],
           boundaryGap: false,
-          axisLine: {
-            style: {
-              stroke: '#999'
-            }
-          },
           axisLabel: {
             style: {
-              fill: '#999'
-            }
+              fill: "#999",
+              interval: 0,
+              rotate: 40,
+              fontSize: 7,
+              fontWeight:'bolder'
+            },
+            
           },
           axisTick: {
-            show: false
+            alignWithLabel: true,
+            interval: 0
           }
         },
         yAxis: {
-          data: 'value',
+          data: "value",
           splitLine: {
             show: false
           },
           axisLine: {
             style: {
-              stroke: '#999'
+              stroke: "#999"
             }
           },
           axisLabel: {
             style: {
-              fill: '#999'
+              fill: "#999"
             },
-            formatter ({ value }) {
-              return value.toFixed(2)
+            formatter({ value }) {
+              return value.toFixed(2);
             }
           },
           axisTick: {
             show: false
-          },
-          min: 95,
-          max: 100,
-          interval: 0.5
+          }
         },
         series: [
           {
             data: [
-              99.56, 99.66, 99.84, 99.22, 99.11, 99.45,
-              99.44, 99.81, 99.84, 99.32, 99.14, 99.45,
-              99.15, 99.45, 99.64, 99.89
+              5.6,
+              5.4,
+              2.7,
+              1.7,
+              0.83,
+              2.5,
+              2.53,
+              3.9,
+              -13.8,
+              -5.3,
+              0.5,
+              4.0,
+              3.9,
+              1.5,
+              1.6,
+              1,
+              6.8,
+              5.07,
+              1.3,
+              3.9,
+              2.9,
+              0.8,
+              4.5,
+              2.7,
+              7.2,
+              3.0,
+              2.7,
+              4.2,
+              6.6,
+              4.6,
+              1.5,
+              2.57,
+              -1.2
             ],
-            type: 'line',
-            name: '设备完好率',
+            type: "bar",
+            name: "经济增长率",
             smooth: true,
-            lineArea: {
-              show: true,
-              gradient: ['rgba(55, 162, 218, 0.6)', 'rgba(55, 162, 218, 0)']
-            },
-            linePoint: {
-              radius: 4,
-              style: {
-                fill: '#00db95'
-              }
-            }
+            barWidth: "60%"
           }
         ]
       }
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="less">
