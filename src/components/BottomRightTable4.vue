@@ -3,7 +3,7 @@
     <dv-border-box-6>
       <div class="table-name">
         <img src="../assets/icon4.png" />
-        <el-button type="text" size="medium" @click.native="onCatalog(0)">故障位置排行榜</el-button>
+        <el-button type="text" size="medium" @click.native="onCatalog(0)">丝路百科</el-button>
       </div>
       <!-- <div class="table-name">
         <img src="../assets/icon4.png" />故障位置排行榜
@@ -27,15 +27,18 @@ export default {
     return {
       config: {
         data: [
-          ['收费广场', '月累计：4起'],
-          ['外场道路', '月累计：3起'],
-          ['运维分中心', '月累计：3起'],
-          ['服务区', '月累计：3起'],
-          ['备件库房', '月累计：2起'],
-          ['其他', '月累计：1起']
+          ['国际陆海贸易新通道（New International Land-Sea Trade Corridor）'],
+          ['冰上丝绸之路'],
+          ['蓝色经济通道'],
+          ['中阿合作论坛'],
+          ['中欧班列'],
+          ['六大经济走廊'],
+          ['上海合作组织（Shanghai Cooperation Organization）'],
+          ['丝路精神'],
+          ['区域经济合作']
         ],
         index: true,
-        columnWidth: [30, 100],
+        columnWidth: [30,155],
         align: ['center'],
         oddRowBGC: 'rgba(9, 37, 50, 0.4)',
         evenRowBGC: 'rgba(10, 32, 50, 0.3)'
