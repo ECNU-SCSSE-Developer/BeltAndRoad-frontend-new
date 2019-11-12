@@ -5,7 +5,7 @@
     </div>
     <!-- <div class="header-name">机电设备完好率</div> -->
     <div class="img-infras">
-        <img :src="imgUrl" />
+        <img :src="imgUrl" height="290px" width="96%" />
     </div>    
     <div class="details-value"><span>99.01</span>%</div>
     <dv-charts :option="option" />
@@ -32,15 +32,14 @@ export default {
 <style lang="less">
 .bottom-left-chart-1 {
   .header-name {
-    height: 150px;
-    line-height: 150px;
+    height: 50px;
+    line-height: 50px;
     font-size: 20px;
     text-align: center;
   }
 
   .img-infras {
-      height: 100px;
-      width: 100px;
+      text-align: center
   }
 
   .details-value {

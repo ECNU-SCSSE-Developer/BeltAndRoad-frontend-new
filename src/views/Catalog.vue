@@ -163,7 +163,7 @@ export default {
       }
 
       .bottom-left-chart-1, .bottom-left-chart-2 {
-        width: 50%;
+        width: 100%;
         height: 100%;
       }
     }
