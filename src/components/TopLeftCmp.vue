@@ -94,10 +94,10 @@ export default {
 
   .main-value {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 22px;
 
     span {
-      font-size: 50px;
+      font-size: 48px;
       color: #00c0ff;
       margin-right: 15px;
     }
