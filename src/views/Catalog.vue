@@ -4,7 +4,7 @@
       <div class="main-header">
         <!-- <div class="mh-left">技术支持:<a href="https://github.com/jiaming743/DataV">https://github.com/jiaming743/DataV</a></div> -->
         <div class="mh-left"></div>
-        <div class="mh-middle">“一带一路”大数据平台</div>
+        <div class="mh-middle">“一带一路”可视化平台</div>
         <div class="mh-right">
           <!-- <dv-border-box-2
             style="width: 120px; height: 50px; line-height: 50px; text-align:center;margin-left:200px;"
