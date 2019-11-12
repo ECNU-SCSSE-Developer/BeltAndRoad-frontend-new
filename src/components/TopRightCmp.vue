@@ -50,11 +50,11 @@ export default {
         legend: {
           data: [
             {
-              name: "国内生产总值GDP",
+              name: "国内生产总值GDP(亿美元)",
               color: "#00baff"
             },
             {
-              name: "人均GDP",
+              name: "人均GDP(美元)",
               color: "#ff5ca9"
             }
           ],
@@ -66,12 +66,12 @@ export default {
           data: ["2013", "2014", "2015", "2016", "2017"],
           axisLine: {
             style: {
-              stroke: "#999"
+              stroke: "#fff"
             }
           },
           axisLabel: {
             style: {
-              fill: "#999"
+              fill: "#fff"
             }
           },
           axisTick: {
@@ -80,19 +80,19 @@ export default {
         },
         yAxis: [
           {
-            name: "国内生产总值GDP",
+            name: "国内生产总值GDP(亿美元)",
             data: "value",
             splitLine: {
               show: false
             },
             axisLine: {
               style: {
-                stroke: "#999"
+                stroke: "#fff"
               }
             },
             axisLabel: {
               style: {
-                fill: "#999"
+                fill: "#fff"
               }
             },
             axisTick: {
@@ -102,7 +102,7 @@ export default {
         ],
         series: [
           {
-            name: "国内生产总值GDP",
+            name: "国内生产总值GDP(亿美元)",
             type: "bar",
             data: [128.13, 140.04, 127.47, 140.45, 140.64],
             barStyle: {
@@ -110,7 +110,7 @@ export default {
             }
           },
           {
-            name: "人均GDP",
+            name: "人均GDP(美元)",
             type: "bar",
             data: [777.6, 825.6, 729.7, 780.5, 781.3],
             barStyle: {
@@ -194,18 +194,18 @@ export default {
             title:{
               text:'马里13-17年国内生产总值和人均GDP',
               style:{
-                fill:'#999'
+                fill:'#fff'
               }
             },
             legend: {
               data: [
                 {
-                  name: "国内生产总值GDP",
-                  color: "#00baff"
+                  name: "国内生产总值GDP(亿美元)",
+                  color: "#ff5ca9"
                 },
                 {
-                  name: "人均GDP",
-                  color: "#ff5ca9"
+                  name: "人均GDP(美元)",
+                  color: "#00baff"
                 }
               ],
               textStyle: {
@@ -216,12 +216,12 @@ export default {
               data: ["2013", "2014", "2015", "2016", "2017"],
               axisLine: {
                 style: {
-                  stroke: "#999"
+                  stroke: "#fff"
                 }
               },
               axisLabel: {
                 style: {
-                  fill: "#999"
+                  fill: "#fff"
                 }
               },
               axisTick: {
@@ -230,19 +230,19 @@ export default {
             },
             yAxis: [
               {
-                name: "国内生产总值GDP",
+                name: "国内生产总值GDP(亿美元)",
                 data: "value",
                 splitLine: {
                   show: false
                 },
                 axisLine: {
                   style: {
-                    stroke: "#999"
+                    stroke: "#fff"
                   }
                 },
                 axisLabel: {
                   style: {
-                    fill: "#999"
+                    fill: "#fff"
                   }
                 },
                 axisTick: {
@@ -252,19 +252,19 @@ export default {
             ],
             series: [
               {
-                name: "国内生产总值GDP",
+                name: "国内生产总值GDP(亿美元)",
                 type: "bar",
                 data: [128.13, 140.04, 127.47, 140.45, 140.64],
                 barStyle: {
-                  fill: "#00baff"
+                  fill: "#ff5ca9"
                 }
               },
               {
-                name: "人均GDP",
+                name: "人均GDP(美元)",
                 type: "bar",
                 data: [777.6, 825.6, 729.7, 780.5, 781.3],
                 barStyle: {
-                  fill: "#ff5ca9"
+                  fill: "#00baff"
                 }
               }//马里
               // {
@@ -328,18 +328,18 @@ export default {
             title:{
               text:'利比里亚13-17年国内生产总值和人均GDP',
               style:{
-                fill:'#999'
+                fill:'#fff'
               }
             },
             legend: {
               data: [
                 {
-                  name: "国内生产总值GDP",
-                  color: "#00baff"
+                  name: "国内生产总值GDP(亿美元)",
+                  color: "#ff5ca9"
                 },
                 {
-                  name: "人均GDP",
-                  color: "#ff5ca9"
+                  name: "人均GDP(美元)",
+                  color: "#00baff"
                 }
               ],
               textStyle: {
@@ -350,12 +350,12 @@ export default {
               data: ["2013", "2014", "2015", "2016", "2017"],
               axisLine: {
                 style: {
-                  stroke: "#999"
+                  stroke: "#fff"
                 }
               },
               axisLabel: {
                 style: {
-                  fill: "#999"
+                  fill: "#fff"
                 }
               },
               axisTick: {
@@ -364,19 +364,19 @@ export default {
             },
             yAxis: [
               {
-                name: "国内生产总值GDP",
+                name: "国内生产总值GDP(亿美元)",
                 data: "value",
                 splitLine: {
                   show: false
                 },
                 axisLine: {
                   style: {
-                    stroke: "#999"
+                    stroke: "#fff"
                   }
                 },
                 axisLabel: {
                   style: {
-                    fill: "#999"
+                    fill: "#fff"
                   }
                 },
                 axisTick: {
@@ -386,19 +386,19 @@ export default {
             ],
             series: [
               {
-                name: "国内生产总值GDP",
+                name: "国内生产总值GDP(亿美元)",
                 type: "bar",
                 data: [19.63, 20.10, 20.18, 20.08, 21.53],
                 barStyle: {
-                  fill: "#00baff"
+                  fill: "#ff5ca9"
                 }
               },
               {
-                name: "人均GDP",
+                name: "人均GDP(美元)",
                 type: "bar",
                 data: [459, 469, 460, 458, 467],
                 barStyle: {
-                  fill: "#ff5ca9"
+                  fill: "#00baff"
                 }
               }
               // 利比里亚
@@ -410,18 +410,18 @@ export default {
             title:{
               text:'秘鲁13-17年国内生产总值和人均GDP',
               style:{
-                fill:'#999'
+                fill:'#fff'
               }
             },
             legend: {
               data: [
                 {
-                  name: "国内生产总值GDP",
-                  color: "#00baff"
+                  name: "国内生产总值GDP(亿美元)",
+                  color: "#ff5ca9"
                 },
                 {
-                  name: "人均GDP",
-                  color: "#ff5ca9"
+                  name: "人均GDP(美元)",
+                  color: "#00baff"
                 }
               ],
               textStyle: {
@@ -432,12 +432,12 @@ export default {
               data: ["2013", "2014", "2015", "2016", "2017"],
               axisLine: {
                 style: {
-                  stroke: "#999"
+                  stroke: "#fff"
                 }
               },
               axisLabel: {
                 style: {
-                  fill: "#999"
+                  fill: "#fff"
                 }
               },
               axisTick: {
@@ -446,19 +446,19 @@ export default {
             },
             yAxis: [
               {
-                name: "国内生产总值GDP",
+                name: "国内生产总值GDP(亿美元)",
                 data: "value",
                 splitLine: {
                   show: false
                 },
                 axisLine: {
                   style: {
-                    stroke: "#999"
+                    stroke: "#fff"
                   }
                 },
                 axisLabel: {
                   style: {
-                    fill: "#999"
+                    fill: "#fff"
                   }
                 },
                 axisTick: {
@@ -468,19 +468,19 @@ export default {
             ],
             series: [
               {
-                name: "国内生产总值GDP",
+                name: "国内生产总值GDP(亿美元)",
                 type: "bar",
                 data: [2012.18, 2010.81, 1899.27, 1916.40, 2113.89],
                 barStyle: {
-                  fill: "#00baff"
+                  fill: "#ff5ca9"
                 }
               },
               {
-                name: "人均GDP",
+                name: "人均GDP(美元)",
                 type: "bar",
                 data: [5970, 5950, 6160, 6340, 6270],
                 barStyle: {
-                  fill: "#ff5ca9"
+                  fill: "#00baff"
                 }
               }
             ]
@@ -496,7 +496,7 @@ export default {
       this.createChart();
       window.setInterval(() => {
         setTimeout(this.createChart, 0);
-      }, 10000);
+      }, 5000);
       this.time++;
     }
   }

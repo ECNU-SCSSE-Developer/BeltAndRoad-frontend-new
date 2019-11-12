@@ -29,12 +29,12 @@ export default {
   data() {
     return {
       option: {
-        title:{
-              text:'部分国家17年经济增长率一览',
-              style:{
-                fill:'#999'
-              }
-            },
+        title: {
+          text: "部分国家17年经济增长率一览",
+          style: {
+            fill: "#fff"
+          }
+        },
         legend: {
           data: ["经济增长率"],
           textStyle: {
@@ -81,13 +81,17 @@ export default {
           boundaryGap: false,
           axisLabel: {
             style: {
-              fill: "#999",
+              fill: "#fff",
               interval: 0,
-              rotate: 40,
+              rotate: 45,
               fontSize: 7,
-              fontWeight:'bolder'
-            },
-            
+              fontWeight: "normal"
+            }
+          },
+          axisLine: {
+            style: {
+              stroke: "#fff"
+            }
           },
           axisTick: {
             alignWithLabel: true,
@@ -101,12 +105,12 @@ export default {
           },
           axisLine: {
             style: {
-              stroke: "#999"
+              stroke: "#fff"
             }
           },
           axisLabel: {
             style: {
-              fill: "#999"
+              fill: "#fff"
             },
             formatter({ value }) {
               return value.toFixed(2);
