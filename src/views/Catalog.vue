@@ -22,10 +22,11 @@
         </div>
         <div class="mc-bottom">
           <dv-border-box-6 class="bottom-left-container">
-            <dv-decoration-4 class="mcb-decoration-1" style="width:5px;height:45%;" />
+            <Bottom-Left-Chart />
+            <!-- <dv-decoration-4 class="mcb-decoration-1" style="width:5px;height:45%;" />
             <dv-decoration-4 class="mcb-decoration-2" style="width:5px;height:45%;" />
             <Bottom-Left-Chart-1 />
-            <Bottom-Left-Chart-2 />
+            <Bottom-Left-Chart-2 /> -->
           </dv-border-box-6>
 
           <div class="bottom-right-container">
@@ -48,6 +49,7 @@ import TopRightCmp from '../components/TopRightCmp'
 
 import BottomLeftChart1 from '../components/BottomLeftChart1'
 import BottomLeftChart2 from '../components/BottomLeftChart2'
+import BottomLeftChart from '../components/BottomLeftChart'
 
 import BottomRightTable1 from '../components/BottomRightTable1'
 import BottomRightTable2 from '../components/BottomRightTable2'
@@ -60,6 +62,7 @@ export default {
     TopLeftCmp,
     TopMiddleCmp,
     TopRightCmp,
+    BottomLeftChart,
     BottomLeftChart1,
     BottomLeftChart2,
     BottomRightTable1,

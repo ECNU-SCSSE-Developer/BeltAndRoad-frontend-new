@@ -46,52 +46,60 @@
               class="cls"
               d="m667.5,264.5l-376.5,-133.5"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_2" x="680" y="264" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">西安</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_2" x="291" y="131" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">莫斯科</text>
             <path
               id="svg_4"
               class="cls"
               d="m750.5,293.453125l-584.5,-134.453125"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_4" x="750" y="293" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">上海</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_4" x="166" y="159" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">柏林</text>
             <path
               id="svg_5"
               class="cls"
               d="m755.5,253.453125l-590.5,-96.453125"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="755" y="253" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">济南</text>
             <path
               id="svg_6"
               class="cls"
               d="m696.5,289.453125l-487.5,-134.453125"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="696" y="289" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">重庆</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="209" y="155" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">弗罗茨瓦夫</text>
             <path
               id="svg_7"
               class="cls"
               d="m251.5,146.453125l494.5,194.546875"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="251" y="146" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">明斯克</text>
             <path
               id="svg_8"
               class="cls"
               d="m696.5,288.453125c0,0 -487,-102 -487.5,-102.453125"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
@@ -100,7 +108,7 @@
               class="cls"
               d="m695.5,287.453125l-459.5,-86.453125"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
@@ -109,7 +117,7 @@
               class="cls"
               d="m695.5,287.453125l-508.5,-62.453125"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
@@ -118,25 +126,27 @@
               class="cls"
               d="m206.5,176.453125l566.5,126.546875"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="206" y="176" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">布达佩斯</text>
             <path
               id="svg_12"
               class="cls"
               d="m723.5,199.453125l-302.5,107.546875"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="723" y="199" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">乌兰察布</text>
             <path
               id="svg_13"
               class="cls"
               d="m695.5,288.453125l-273.5,17.546875"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
@@ -145,7 +155,7 @@
               class="cls"
               d="m693.5,288.453125l-259.5,-45.453125"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
@@ -154,37 +164,41 @@
               class="cls"
               d="m769.5,319.5l-45.5,84.5"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="769" y="319" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">义乌</text>
             <path
               id="svg_16"
               class="cls"
               d="m740.5,339.5l-173.5,96.5"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="740" y="339" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">深圳</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="564" y="449" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">贝利亚塔</text>
             <path
               id="svg_17"
               class="cls"
               d="m771.5,199.5l36.5,4.5"
               opacity="0.5"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="#fff"
             />
-
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="771" y="199" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">哈尔滨</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="791" y="210" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">海参崴</text>
             <path
               id="svg_23"
               class="cls1"
               d="m705.5,285.5c-391,-89 -435,14 -435,14"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
@@ -192,32 +206,35 @@
               id="svg_25"
               class="cls1"
               d="m118.5,270.5c322,-70 600,-12 599.5,-12.5"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="118" y="270" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">阿尔及尔</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="720" y="265" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">郑州</text>
             <path
               id="svg_27"
               class="cls1"
               d="m617.5,149.5c112,101 132,190 131.5,189.5"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="617" y="149" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">新西伯利亚</text>
             <path
               id="svg_28"
               class="cls1"
               d="m619.5,149.5l47.5,117.5"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
@@ -226,21 +243,22 @@
               id="svg_9"
               class="cls1"
               d="m801.5,251.5c-121,62 -76,156 -76,156"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="801" y="251" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">首尔</text>
             <path
               id="svg_29"
               class="cls1"
               d="m705.5,284.45313c-414,-125 -605,-125 -605,-126"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
@@ -248,10 +266,10 @@
               id="svg_30"
               class="cls1"
               d="m749.5,338.45313l168.5,360.54688"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
@@ -259,21 +277,22 @@
               id="svg_31"
               class="cls1"
               d="m778.5,299.45313c-432,-136 -650,-96 -650,-96"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="279" y="307" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">开罗</text>
             <path
               id="svg_32"
               class="cls1"
               d="m778.5,299.45313c-444,-53 -477,-32 -477.5,-32.45313"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
@@ -281,21 +300,23 @@
               id="svg_33"
               class="cls1"
               d="m917.5,697.45313l-236.5,-376.45313"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="917" y="697" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">悉尼</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="681" y="321" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">昆明</text>
             <path
               id="svg_34"
               class="cls1"
               d="m719.5,301.45313c-228,-138 -492,-162 -492.5,-162.45313"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
@@ -303,29 +324,37 @@
               id="svg_35"
               class="cls1"
               d="m705.5,283.45313c-242,-162 -420,-148 -420.5,-148.45313"
-              opacity="0.5"
+              opacity="0.8"
               fill-opacity="null"
               stroke-opacity="null"
-              stroke-width="1.5"
+              stroke-width="3"
               stroke="#000"
               fill="none"
             />
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="173" y="232" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">米兰</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="100" y="155" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">伦敦</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="120" y="210" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">里昂</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="210" y="200" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">布拉格</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="425" y="307" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">巴姆</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="300" y="270" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">特拉维夫</text>
+            <text class="cls" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="209" y="120" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">维尔纽斯</text>
+            <text class="cls2" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="13" id="tsvg_5" x="230" y="210" stroke-width="0" stroke="#000" fill="#0E1324" font-weight="bold">布加勒斯特</text>
+            
+            
           </g>
         </svg>
       </div>
       <div class="right-part">
-        <p style="color:white;font-size:20px">截止2019年9月，一带一路项目</p>
+        <p style="color:white;font-size:20px">一带一路六周年以来</p>
         <p style="color:white;font-size:20px">共开通铁路专列:</p>
         <dv-digital-flop
           :config="config1"
-          style="width:100px;height:50px;fill:white"
-          animationFrame="100000"
+          style="width:100px;height:80px;fill:white;font-weight:bold"
         />
-        <p style="color:white;font-size:20px">共开通航线:</p>
+        <p style="color:white;font-size:20px">共开通飞机航线:</p>
         <dv-digital-flop
           :config="config3"
-          style="width:100px;height:50px;fill:white"
-          animationFrame="100000"
+          style="width:100px;height:80px;fill:white;font-weight:bold"
         />
       </div>
     </div>
@@ -335,21 +364,25 @@
 <script>
 const config1 = {
   number: [0],
-  content: "{nt}条"
+  content: "{nt}条",
+  animationFrame:500
 };
 
 const config2 = {
   number: [670],
-  content: "{nt}条"
+  content: "{nt}条",
+  animationFrame:500
 };
 const config3 = {
   number: [0],
-  content: "{nt}条"
+  content: "{nt}条",
+  animationFrame:500
 };
 
 const config4 = {
   number: [76],
-  content: "{nt}条"
+  content: "{nt}条",
+  animationFrame:500
 };
 export default {
   data() {
@@ -393,12 +426,12 @@ export default {
   width: 80%;
 }
 .right-part {
-  margin-top: 50px;
+  margin-top: 200px;
   margin-right: 200px;
 }
 #svg_2,
 #svg_23,
-#svg_31 {
+#svg_31{
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   -webkit-animation: draw 5s infinite;
@@ -406,9 +439,18 @@ export default {
   animation-iteration-count: 1; /*动画只执行一次*/
 }
 
+#tsvg_2,
+#tsvg_23,
+#tsvg_31{
+transition-delay: 10s;
+}
+
 #svg_4,
 #svg_24,
-#svg_32 {
+#svg_32,
+#tsvg_4,
+#tsvg_24,
+#tsvg_32 {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   -webkit-animation: draw 5s infinite;
@@ -420,7 +462,11 @@ export default {
 #svg_5,
 #svg_10,
 #svg_25,
-#svg_33 {
+#svg_33,
+#tsvg_5,
+#tsvg_10,
+#tsvg_25,
+#tsvg_33 {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   -webkit-animation: draw 5s infinite;
@@ -431,7 +477,11 @@ export default {
 #svg_6,
 #svg_11,
 #svg_26,
-#svg_34 {
+#svg_34,
+#tsvg_6,
+#tsvg_11,
+#tsvg_26,
+#tsvg_34 {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   -webkit-animation: draw 5s infinite;
@@ -442,7 +492,11 @@ export default {
 #svg_7,
 #svg_12,
 #svg_27,
-#svg_35 {
+#svg_35,
+#tsvg_7,
+#tsvg_12,
+#tsvg_27,
+#tsvg_35  {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   -webkit-animation: draw 5s infinite;
@@ -452,7 +506,10 @@ export default {
 }
 #svg_8,
 #svg_13,
-#svg_28 {
+#svg_28,
+#tsvg_8,
+#tsvg_13,
+#tsvg_28 {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   -webkit-animation: draw 5s infinite;
@@ -462,7 +519,10 @@ export default {
 }
 #svg_9,
 #svg_14,
-#svg_29 {
+#svg_29,
+#tsvg_9,
+#tsvg_14,
+#tsvg_29 {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   -webkit-animation: draw 5s infinite;
@@ -473,7 +533,11 @@ export default {
 #svg_15,
 #svg_16,
 #svg_17,
-#svg_30 {
+#svg_30,
+#tsvg_15,
+#tsvg_16,
+#tsvg_17,
+#tsvg_30 {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
   -webkit-animation: draw 5s infinite;
@@ -513,4 +577,5 @@ body {
 .cls1 {
   stroke: royalblue;
 }
+
 </style>
