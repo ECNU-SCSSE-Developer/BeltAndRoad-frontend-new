@@ -17,7 +17,7 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "luxon": "^1.16.0",
-    "postcss": "^7.0.14",
+    "postcss": "^7.0.36",
     "postcss-pxtorem": "^4.0.1",
     "qs": "^6.7.0",
     "sass-resources-loader": "^2.0.0",
