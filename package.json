@@ -19,7 +19,7 @@
     "luxon": "^1.16.0",
     "postcss": "^7.0.14",
     "postcss-pxtorem": "^4.0.1",
-    "qs": "^6.7.0",
+    "qs": "^6.7.3",
     "sass-resources-loader": "^2.0.0",
     "vue": "^2.6.10",
     "vue-echarts": "^4.0.3",
